@@ -1,0 +1,19 @@
+Objective:
+Predict which financial response (model_a vs model_b) is better for a given finance prompt, or whether it’s a tie.
+
+Input → Output
+•	Input (X): prompt, response_a, response_b
+•	Output (y): winner_model_a, winner_model_b, winner_tie (3-class classification)
+
+DL Type:
+•	Supervised learning
+•	Sequence modeling (LSTM)
+
+Business / Research Metric:
+•	Primary: Accuracy, ROC-AUC
+•	Secondary: F1-score (especially for tie class, if minority)
+
+Constraints:
+•	Limited dataset (~13k) → small LSTM or pretrained embeddings recommended
+•	Sequence length varies → padding/truncation needed
+•	Interpretability (optional SHAP/attention)
